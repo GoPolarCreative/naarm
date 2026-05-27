@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naarm Earthmoving — Aboriginal-Owned Earthmoving, Melbourne</title>
+  <meta name="description" content="Naarm Earthmoving is a proud Aboriginal-owned and operated earthmoving company of the Wurundjeri Woi Wurrung people, serving Melbourne with civil and residential earthworks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0f0e0d;
+      --bg2:       #1a1916;
+      --sky:       #6BBDE3;
+      --ochre:     #C8860A;
+      --cream:     #F0E6D3;
+      --cream-muted: #b8a990;
+      --terracotta:#8B3A1A;
+      --terracotta-lt: #b04a22;
+      --border:    #2a2620;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; line-height: 1.1; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+    input, select, textarea { font-family: inherit; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    /* ===== DOT ART BACKGROUND TEXTURE (SVG data URI) ===== */
+    /* Generated inline in sections via background-image */
+
+    /* ===== NAV ===== */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--ochre);
+      height: 76px;
+      display: flex; align-items: center;
+    }
+    .nav-inner {
+      width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .nav-logo {
+      display: flex; align-items: center;
+      flex-shrink: 0;
+    }
+    .nav-logo img {
+      height: 60px; width: auto; display: block;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 28px; list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      color: var(--cream-muted); text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .btn-nav-cta {
+      background: var(--sky); color: var(--bg); border: none;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.08em;
+      padding: 10px 22px; border-radius: 0;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .btn-nav-cta:hover { background: #93d0ef; }
+    .nav-mobile-toggle {
+      display: none; background: none; border: none; color: var(--cream); padding: 4px;
+    }
+    .nav-mobile-menu {
+      display: none;
+      position: fixed; top: 68px; left: 0; right: 0;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--ochre);
+      padding: 20px 24px;
+      z-index: 999;
+    }
+    .nav-mobile-menu.open { display: block; }
+    .nav-mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .nav-mobile-menu a {
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+      color: var(--cream-muted); text-transform: uppercase;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      padding-top: 76px;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      background: var(--bg);
+    }
+    .hero-watermark {
+      position: absolute; bottom: 40px; right: 0;
+      pointer-events: none; user-select: none;
+      opacity: 0.055;
+    }
+    .hero-watermark img {
+      width: 520px; max-width: 50vw; height: auto; display: block;
+    }
+    .hero-photo {
+      position: absolute; inset: 0;
+      background-image: url('/AboringalCATDigger.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+    }
+    .hero-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(15,14,13,0.88) 0%,
+        rgba(15,14,13,0.72) 55%,
+        rgba(15,14,13,0.45) 100%
+      );
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .hero-concentric {
+      position: absolute; right: -80px; top: 50%;
+      transform: translateY(-50%);
+      width: 700px; height: 700px;
+      opacity: 0.08;
+    }
+    .hero-dot-texture {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='6' cy='6' r='1.5' fill='%23C8860A'/%3E%3Ccircle cx='30' cy='6' r='1' fill='%23F0E6D3'/%3E%3Ccircle cx='54' cy='10' r='1.2' fill='%238B3A1A'/%3E%3Ccircle cx='18' cy='24' r='1' fill='%23C8860A'/%3E%3Ccircle cx='44' cy='28' r='1.5' fill='%23F0E6D3'/%3E%3Ccircle cx='8' cy='44' r='1.2' fill='%238B3A1A'/%3E%3Ccircle cx='36' cy='50' r='1' fill='%23C8860A'/%3E%3Ccircle cx='56' cy='42' r='1.5' fill='%23F0E6D3'/%3E%3Ccircle cx='22' cy='56' r='1' fill='%238B3A1A'/%3E%3C/svg%3E");
+      opacity: 0.05;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-headline {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: 1rem; color: var(--cream-muted); line-height: 1.7;
+      margin-bottom: 36px; max-width: 480px;
+    }
+    .hero-sub strong { color: var(--ochre); font-weight: 600; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--sky); color: var(--bg); border: none;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.08em;
+      padding: 14px 32px; border-radius: 0;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: #93d0ef; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--cream); border: 1px solid var(--cream);
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.08em;
+      padding: 14px 32px; border-radius: 0;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { background: var(--cream); color: var(--bg); transform: translateY(-1px); }
+
+    /* Hero Form */
+    .hero-form-wrap {
+      background: var(--bg2);
+      border: 1px solid var(--ochre);
+      padding: 36px 32px;
+    }
+    .hero-form-title {
+      font-size: 1.6rem; color: var(--cream); margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-muted);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; background: var(--bg); border: 1px solid var(--border);
+      color: var(--cream); padding: 11px 14px; font-size: 0.9rem;
+      border-radius: 0; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--sky);
+      box-shadow: 0 0 0 2px rgba(107,189,227,0.18);
+    }
+    .form-group select option { background: var(--bg2); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-form-submit {
+      width: 100%; background: var(--sky); color: var(--bg); border: none;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.1em;
+      padding: 14px; border-radius: 0; margin-top: 4px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-form-submit:hover { background: #93d0ef; transform: translateY(-1px); }
+
+    /* ===== TRUST BAR ===== */
+    #trust {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      overflow-x: auto;
+    }
+    .trust-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 20px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      justify-content: center;
+    }
+    /* top row: 3 items, each spans 2 of 6 cols */
+    .trust-item:nth-child(1) { grid-column: span 2; }
+    .trust-item:nth-child(2) { grid-column: span 2; }
+    .trust-item:nth-child(3) { grid-column: span 2; border-right: none; }
+    /* bottom row: 2 items each spanning 3 cols → centred under the 3 above */
+    .trust-item:nth-child(4) { grid-column: span 3; border-bottom: none; }
+    .trust-item:nth-child(5) { grid-column: span 3; border-right: none; border-bottom: none; }
+    .trust-icon { color: var(--ochre); flex-shrink: 0; }
+    .trust-label {
+      font-weight: 600; font-size: 0.78rem; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--cream); white-space: nowrap;
+    }
+
+    /* ===== SECTION DIVIDER (dot art) ===== */
+    .dot-divider {
+      height: 32px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='32'%3E%3Ccircle cx='8' cy='16' r='2' fill='%23C8860A'/%3E%3Ccircle cx='20' cy='10' r='1.5' fill='%23F0E6D3'/%3E%3Ccircle cx='32' cy='16' r='2' fill='%238B3A1A'/%3E%3Ccircle cx='14' cy='24' r='1' fill='%23C8860A'/%3E%3Ccircle cx='26' cy='22' r='1.5' fill='%23F0E6D3'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: center;
+      opacity: 0.35;
+      margin: 0;
+    }
+
+    /* ===== SERVICES ===== */
+    #services {
+      padding: 100px 0 80px;
+      position: relative;
+    }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-title { font-size: clamp(2.5rem, 4vw, 4rem); color: var(--cream); margin-bottom: 16px; }
+    .section-sub { font-size: 0.95rem; color: var(--cream-muted); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .service-card {
+      background: var(--bg2);
+      border: 1px solid var(--terracotta);
+      padding: 28px 24px 36px;
+      position: relative; overflow: hidden;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .service-card:hover { border-color: var(--ochre); transform: translateY(-3px); }
+    .service-icon { color: var(--ochre); margin-bottom: 16px; }
+    .service-title { font-size: 1.3rem; color: var(--cream); margin-bottom: 8px; }
+    .service-desc { font-size: 0.85rem; color: var(--cream-muted); line-height: 1.6; }
+    .card-dot-accent {
+      position: absolute; bottom: 12px; right: 12px; opacity: 0.2;
+      pointer-events: none;
+    }
+
+    /* ===== ABOUT ===== */
+    #about {
+      padding: 100px 0;
+      background: var(--bg2);
+      position: relative; overflow: hidden;
+    }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-rule {
+      width: 60px; height: 2px; background: var(--ochre); margin: 16px 0 28px;
+    }
+    .about-heading { font-size: clamp(2rem, 3.5vw, 3.2rem); color: var(--cream); }
+    .about-body { font-size: 0.95rem; color: var(--cream-muted); line-height: 1.8; }
+    .about-body p { margin-bottom: 16px; }
+    .about-svg-panel {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ===== WHY CHOOSE US ===== */
+    #why {
+      padding: 100px 0;
+      position: relative;
+    }
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 60px;
+    }
+    .why-item {
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .why-icon { color: var(--ochre); flex-shrink: 0; margin-top: 2px; }
+    .why-title { font-size: 1.25rem; color: var(--cream); margin-bottom: 6px; }
+    .why-desc { font-size: 0.88rem; color: var(--cream-muted); line-height: 1.65; }
+
+    /* ===== CERTIFICATIONS ===== */
+    #certifications {
+      padding: 100px 0;
+      background: var(--bg2);
+      text-align: center;
+    }
+    .cert-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 860px; margin: 60px auto 0;
+    }
+    .cert-card {
+      padding: 48px 36px;
+      display: flex; flex-direction: column; align-items: center; gap: 20px;
+      transition: transform 0.2s;
+    }
+    .cert-card:hover { transform: translateY(-4px); }
+    .cert-card.supply-nation { border: 2px solid var(--ochre); }
+    .cert-card.kinaway { border: 2px solid var(--terracotta-lt); }
+    .cert-card-icon { margin-bottom: 4px; }
+    .cert-card-name {
+      font-size: 1.8rem; color: var(--cream);
+    }
+    .cert-card-desc { font-size: 0.88rem; color: var(--cream-muted); line-height: 1.6; max-width: 300px; }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials {
+      padding: 100px 0;
+    }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;
+    }
+    .testimonial-card {
+      background: var(--bg2); border: 1px solid var(--terracotta);
+      padding: 28px 24px;
+    }
+    .testimonial-stars { display: flex; gap: 4px; margin-bottom: 14px; }
+    .testimonial-text { font-size: 0.88rem; color: var(--cream-muted); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+    .testimonial-name { font-weight: 600; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream); }
+
+    /* ===== GALLERY ===== */
+    #gallery {
+      padding: 100px 0;
+      background: var(--bg2);
+    }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 60px;
+    }
+    .gallery-item {
+      aspect-ratio: 3/4; background: var(--bg); cursor: pointer;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+    .gallery-item:hover { opacity: 0.85; transform: scale(1.02); }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.35s;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.92);
+      align-items: center; justify-content: center;
+    }
+    #lightbox.active { display: flex; }
+    .lightbox-content {
+      position: relative; max-width: 900px; width: 90vw;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+    .lightbox-img { width: 100%; display: block; }
+    .lightbox-placeholder {
+      width: 100%; background: transparent;
+    }
+    .lb-close, .lb-prev, .lb-next {
+      position: absolute; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      color: var(--cream); cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lb-close:hover, .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,0.18); }
+    .lb-close { top: -44px; right: 0; width: 40px; height: 40px; }
+    .lb-prev { left: -56px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; }
+    .lb-next { right: -56px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      padding: 100px 0;
+    }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+      margin-top: 60px;
+    }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 28px;
+    }
+    .contact-detail-icon { color: var(--ochre); flex-shrink: 0; margin-top: 2px; }
+    .contact-detail-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ochre); margin-bottom: 2px;
+    }
+    .contact-detail-value { font-size: 0.95rem; color: var(--cream); }
+    .contact-detail-value a { transition: color 0.2s; }
+    .contact-detail-value a:hover { color: var(--sky); }
+    .acknowledgement {
+      margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border);
+      font-size: 0.82rem; color: var(--cream-muted); line-height: 1.75; font-style: italic;
+    }
+
+    /* ===== FOOTER ===== */
+    #footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 48px 0 28px;
+    }
+    .footer-dot-strip {
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Ccircle cx='8' cy='10' r='2' fill='%23C8860A'/%3E%3Ccircle cx='20' cy='6' r='1.5' fill='%23F0E6D3'/%3E%3Ccircle cx='32' cy='10' r='2' fill='%238B3A1A'/%3E%3Ccircle cx='14' cy='15' r='1' fill='%23C8860A'/%3E%3Ccircle cx='26' cy='14' r='1.5' fill='%23F0E6D3'/%3E%3C/svg%3E");
+      background-repeat: repeat-x; background-position: center;
+      opacity: 0.4; margin-bottom: 40px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;
+    }
+    .footer-logo { margin-bottom: 16px; }
+    .footer-logo img { height: 80px; width: auto; }
+    .footer-tagline { font-size: 0.8rem; color: var(--cream-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-nav a { font-size: 0.82rem; color: var(--cream-muted); transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--cream); }
+    .footer-bottom {
+      max-width: 1200px; margin: 32px auto 0; padding: 20px 24px 0;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom-text { font-size: 0.75rem; color: var(--cream-muted); }
+    .footer-bottom-text a { color: var(--sky); transition: color 0.2s; }
+    .footer-bottom-text a:hover { color: #93d0ef; }
+
+    /* ===== FORM SUCCESS / ERROR ===== */
+    .form-message {
+      padding: 12px 16px; font-size: 0.85rem; font-weight: 500; margin-top: 12px;
+      display: none;
+    }
+    .form-message.success { background: rgba(107,189,227,0.12); border: 1px solid var(--sky); color: var(--sky); display: block; }
+    .form-message.error { background: rgba(139,58,26,0.15); border: 1px solid var(--terracotta-lt); color: #e07050; display: block; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-concentric { width: 400px; height: 400px; opacity: 0.06; right: -100px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-svg-panel { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .trust-inner { grid-template-columns: repeat(4, 1fr); }
+      .trust-item:nth-child(1) { grid-column: span 2; }
+      .trust-item:nth-child(2) { grid-column: span 2; border-right: none; }
+      .trust-item:nth-child(3) { grid-column: span 4; border-right: none; }
+      .trust-item:nth-child(4) { grid-column: span 2; border-right: 1px solid var(--border); border-bottom: none; }
+      .trust-item:nth-child(5) { grid-column: span 2; border-right: none; border-bottom: none; }
+      .lb-prev { left: -48px; }
+      .lb-next { right: -48px; }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .btn-nav-cta { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+      .hero-form-wrap { padding: 24px 18px; }
+      .lb-prev { left: 8px; }
+      .lb-next { right: 8px; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo"><img src="/Naarm.png" alt="NAARM Earthmoving" /></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#hero-form" class="btn-nav-cta">Free Quote</a>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="26" height="20" viewBox="0 0 26 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="3" x2="26" y2="3"/>
+        <line x1="0" y1="10" x2="26" y2="10"/>
+        <line x1="0" y1="17" x2="26" y2="17"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+    <li><a href="#certifications" onclick="closeMobileMenu()">Certifications</a></li>
+    <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    <li><a href="#hero-form" onclick="closeMobileMenu()" style="color: var(--sky); font-weight:600;">Free Quote</a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-photo-overlay" aria-hidden="true"></div>
+  <div class="hero-bg">
+    <!-- Concentric circles motif, ochre, offset right -->
+    <svg class="hero-concentric" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="350" cy="350" r="330" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="295" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="258" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="220" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="182" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="143" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="104" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="66" stroke="#C8860A" stroke-width="2"/>
+      <circle cx="350" cy="350" r="30" fill="#C8860A"/>
+    </svg>
+    <div class="hero-dot-texture" aria-hidden="true"></div>
+  </div>
+  <div class="hero-watermark" aria-hidden="true">
+    <img src="/Naarm.png" alt="" />
+  </div>
+  <div class="hero-inner">
+    <!-- Left column -->
+    <div class="hero-copy">
+      <h1 class="hero-headline">Built on Country.<br/>Built to Last.</h1>
+      <p class="hero-sub">
+        <strong>Wurundjeri Woi Wurrung</strong> — Aboriginal-owned earthmoving across Melbourne. Civil, residential, and everything in between.
+      </p>
+      <div class="hero-btns">
+        <a href="#hero-form" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Get a Free Quote
+        </a>
+        <a href="tel:0478096633" class="btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          Call 0478 096 633
+        </a>
+      </div>
+    </div>
+    <!-- Right column — enquiry form -->
+    <div class="hero-form-wrap" id="hero-form">
+      <h2 class="hero-form-title">Send an Enquiry</h2>
+      <form id="heroEnquiryForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="06327f5e-b734-4c48-ad27-874ce3fb8740" />
+        <input type="hidden" name="subject" value="New Enquiry — Naarm Earthmoving Website" />
+        <input type="hidden" name="redirect" value="false" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="hero-name">Name</label>
+            <input type="text" id="hero-name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="hero-phone">Phone</label>
+            <input type="tel" id="hero-phone" name="phone" placeholder="04XX XXX XXX" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="hero-email">Email</label>
+          <input type="email" id="hero-email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="hero-service">Service Needed</label>
+          <select id="hero-service" name="service">
+            <option value="">Select a service...</option>
+            <option>Site Cuts</option>
+            <option>Mechanical Archaeological Excavation &amp; Sieve Hire</option>
+            <option>Vegetation Management &amp; Removal</option>
+            <option>Site Preparation</option>
+            <option>Streetscapes</option>
+            <option>Trenching</option>
+            <option>On-Site Hourly Hire</option>
+            <option>Civil &amp; Residential Earthworks</option>
+            <option>Detailed &amp; Bulk Earthworks</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="hero-message">Message</label>
+          <textarea id="hero-message" name="message" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn-form-submit">Send Enquiry</button>
+        <div class="form-message" id="heroFormMsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<section id="trust" aria-label="Trust indicators">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon" aria-hidden="true">
+        <!-- Shield badge icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L3 7v5c0 5.25 3.75 10.1 9 11.25C17.25 22.1 21 17.25 21 12V7L12 2z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+      </span>
+      <span class="trust-label">Supply Nation Certified</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon" aria-hidden="true">
+        <!-- Shield star icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L3 7v5c0 5.25 3.75 10.1 9 11.25C17.25 22.1 21 17.25 21 12V7L12 2z"/>
+          <polygon points="12 8 13.09 11.26 16.5 11.27 13.82 13.14 14.82 16.41 12 14.47 9.18 16.41 10.18 13.14 7.5 11.27 10.91 11.26" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="trust-label">Kinaway Member</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon" aria-hidden="true">
+        <!-- Calendar icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="6" fill="currentColor" stroke="none">7YRS</text>
+        </svg>
+      </span>
+      <span class="trust-label">7 Years in Business</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon" aria-hidden="true">
+        <!-- Heritage/country icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <circle cx="12" cy="12" r="6"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+          <line x1="12" y1="2" x2="12" y2="6"/>
+          <line x1="12" y1="18" x2="12" y2="22"/>
+          <line x1="2" y1="12" x2="6" y2="12"/>
+          <line x1="18" y1="12" x2="22" y2="12"/>
+        </svg>
+      </span>
+      <span class="trust-label">15 Years Cultural Heritage Experience</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon" aria-hidden="true">
+        <!-- Lightning bolt icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </span>
+      <span class="trust-label">Emergency &amp; Same-Day</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOT ART DIVIDER ===== -->
+<div class="dot-divider" aria-hidden="true"></div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="services-heading">What We Do</h2>
+      <p class="section-sub">From detailed earthworks to full site prep — we care for Country and care for your site.</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Site Cuts -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20h20M6 20V10l6-7 6 7v10"/>
+            <path d="M9 20v-5h6v5"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Site Cuts</h3>
+        <p class="service-desc">Precision cutting and levelling for all terrain types, residential and civil.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mechanical Archaeological Excavation -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h4l3-9 4 18 3-9h4"/>
+            <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Mechanical Archaeological Excavation &amp; Sieve Hire</h3>
+        <p class="service-desc">Specialist excavation with respect for what lies beneath Country.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Vegetation Management -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V12"/>
+            <path d="M12 12C12 12 7 10 5 5c3 1 6 3 7 7z"/>
+            <path d="M12 12C12 12 17 10 19 5c-3 1-6 3-7 7z"/>
+            <path d="M12 17C12 17 8 15 6 11c2.5.8 5 2.5 6 6z"/>
+            <path d="M12 17C12 17 16 15 18 11c-2.5.8-5 2.5-6 6z"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Vegetation Management &amp; Removal</h3>
+        <p class="service-desc">Clearing and management carried out with care for the land and surrounding environment.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Site Preparation -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Shovel icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 22l4-4m0 0l6-10m-6 10L5 16m8-8l5-5a2 2 0 0 1 3 3l-5 5m-3-3l-5 8"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Site Preparation</h3>
+        <p class="service-desc">Full site prep for construction, development, and civil projects across Melbourne.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Streetscapes -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M3 7v14M21 7v14M6 7V3h12v4M9 21v-6h6v6"/>
+            <line x1="3" y1="7" x2="21" y2="7"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Streetscapes</h3>
+        <p class="service-desc">Earthworks for road verges, footpaths, kerbing, and urban landscape projects.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Trenching -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Trench/line icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 18h16"/>
+            <path d="M8 6v12M16 6v12"/>
+            <path d="M4 12h4M16 12h4"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Trenching</h3>
+        <p class="service-desc">Accurate trench excavation for drainage, utilities, and services installation.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- On-Site Hourly Hire -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Excavator bucket / scoop icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19h16"/>
+            <path d="M6 19V9l4-5h4l4 5v10"/>
+            <path d="M10 19v-5h4v5"/>
+            <path d="M6 13h12"/>
+          </svg>
+        </div>
+        <h3 class="service-title">On-Site Hourly Hire</h3>
+        <p class="service-desc">Flexible machinery and operator hire by the hour — reactive and ready across Melbourne.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Civil & Residential -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11l2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Civil &amp; Residential Earthworks</h3>
+        <p class="service-desc">End-to-end earthworks for houses, subdivisions, and civil infrastructure projects.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Detailed & Bulk Earthworks -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Detailed &amp; Bulk Earthworks</h3>
+        <p class="service-desc">High-precision and large-scale earthmoving for any project size or complexity.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Dial Before You Dig -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/>
+            <polyline points="16 2 16 8 22 8"/>
+            <line x1="16" y1="8" x2="22" y2="2"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Dial Before You Dig Services</h3>
+        <p class="service-desc">Safe, compliant excavation around underground services and utilities.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Tipper Truck & Dog / Tandem -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="10" width="15" height="8" rx="1"/>
+            <path d="M16 12h3l3 3v3h-6v-6z"/>
+            <circle cx="5.5" cy="18.5" r="1.5"/>
+            <circle cx="18.5" cy="18.5" r="1.5"/>
+            <path d="M1 10V7a2 2 0 0 1 2-2h8l5 5"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Tipper Truck &amp; Dog / Tandem Hire</h3>
+        <p class="service-desc">Soil cartage and haulage with tipper truck and dog or tandem configuration — ideal for bulk earthworks and spoil removal.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Landscaping -->
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V12"/>
+            <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+            <path d="M8 6c0-2.8 4-6 4-6s4 3.2 4 6a4 4 0 0 1-8 0z"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Landscaping</h3>
+        <p class="service-desc">From site finishing to full landscape works — we leave every site looking the part.</p>
+        <div class="card-dot-accent" aria-hidden="true">
+          <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#C8860A"/>
+            <circle cx="22" cy="8" r="2" fill="#F0E6D3"/>
+            <circle cx="34" cy="12" r="3" fill="#8B3A1A"/>
+            <circle cx="8" cy="24" r="2" fill="#F0E6D3"/>
+            <circle cx="20" cy="26" r="3" fill="#C8860A"/>
+            <circle cx="32" cy="22" r="2" fill="#8B3A1A"/>
+            <circle cx="44" cy="16" r="3" fill="#C8860A"/>
+            <circle cx="14" cy="38" r="2" fill="#C8860A"/>
+            <circle cx="28" cy="36" r="3" fill="#F0E6D3"/>
+            <circle cx="42" cy="30" r="2" fill="#8B3A1A"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOT ART DIVIDER ===== -->
+<div class="dot-divider" aria-hidden="true"></div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-inner">
+      <!-- Left: text -->
+      <div class="about-text">
+        <h2 class="about-heading" id="about-heading">Wurundjeri Country, Built Into Every Job</h2>
+        <div class="about-rule" aria-hidden="true"></div>
+        <div class="about-body">
+          <p>Naarm Earthmoving is a proud Aboriginal-owned and operated business of the Wurundjeri Woi Wurrung people. With 7 years in the earthmoving industry and 15 years of experience in Aboriginal cultural heritage, we bring an understanding of Country that no other operator can.</p>
+          <p>When you hire Naarm, you're not just getting a quality earthmoving team. You're supporting Indigenous enterprise and genuine connection to the land we work on — from residential builds to civil infrastructure.</p>
+          <p>We operate with the values of mob — honesty, hard work, and standing by what you do.</p>
+        </div>
+      </div>
+      <!-- Right: decorative SVG composition -->
+      <div class="about-svg-panel" aria-hidden="true">
+        <svg width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Large concentric rings -->
+          <circle cx="240" cy="240" r="220" stroke="#C8860A" stroke-width="1.5" opacity="0.25"/>
+          <circle cx="240" cy="240" r="190" stroke="#C8860A" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="240" cy="240" r="158" stroke="#C8860A" stroke-width="2" opacity="0.35"/>
+          <circle cx="240" cy="240" r="126" stroke="#8B3A1A" stroke-width="2" opacity="0.4"/>
+          <circle cx="240" cy="240" r="94" stroke="#C8860A" stroke-width="2.5" opacity="0.5"/>
+          <circle cx="240" cy="240" r="64" stroke="#8B3A1A" stroke-width="2.5" opacity="0.55"/>
+          <circle cx="240" cy="240" r="36" stroke="#C8860A" stroke-width="3" opacity="0.65"/>
+          <circle cx="240" cy="240" r="14" fill="#C8860A" opacity="0.7"/>
+          <!-- Radiating dot clusters -->
+          <!-- Top -->
+          <circle cx="240" cy="14" r="4" fill="#C8860A" opacity="0.6"/>
+          <circle cx="228" cy="28" r="3" fill="#F0E6D3" opacity="0.5"/>
+          <circle cx="252" cy="28" r="3" fill="#8B3A1A" opacity="0.5"/>
+          <circle cx="216" cy="40" r="2.5" fill="#C8860A" opacity="0.4"/>
+          <circle cx="264" cy="40" r="2.5" fill="#F0E6D3" opacity="0.4"/>
+          <!-- Bottom -->
+          <circle cx="240" cy="466" r="4" fill="#C8860A" opacity="0.6"/>
+          <circle cx="228" cy="452" r="3" fill="#F0E6D3" opacity="0.5"/>
+          <circle cx="252" cy="452" r="3" fill="#8B3A1A" opacity="0.5"/>
+          <!-- Right -->
+          <circle cx="466" cy="240" r="4" fill="#C8860A" opacity="0.6"/>
+          <circle cx="452" cy="228" r="3" fill="#F0E6D3" opacity="0.5"/>
+          <circle cx="452" cy="252" r="3" fill="#8B3A1A" opacity="0.5"/>
+          <!-- Left -->
+          <circle cx="14" cy="240" r="4" fill="#C8860A" opacity="0.6"/>
+          <circle cx="28" cy="228" r="3" fill="#F0E6D3" opacity="0.5"/>
+          <circle cx="28" cy="252" r="3" fill="#8B3A1A" opacity="0.5"/>
+          <!-- Diagonal clusters NE -->
+          <circle cx="396" cy="84" r="5" fill="#C8860A" opacity="0.45"/>
+          <circle cx="380" cy="100" r="3.5" fill="#F0E6D3" opacity="0.35"/>
+          <circle cx="410" cy="100" r="3" fill="#8B3A1A" opacity="0.35"/>
+          <!-- Diagonal clusters SW -->
+          <circle cx="84" cy="396" r="5" fill="#C8860A" opacity="0.45"/>
+          <circle cx="100" cy="380" r="3.5" fill="#F0E6D3" opacity="0.35"/>
+          <circle cx="68" cy="380" r="3" fill="#8B3A1A" opacity="0.35"/>
+          <!-- NW -->
+          <circle cx="84" cy="84" r="5" fill="#8B3A1A" opacity="0.45"/>
+          <circle cx="100" cy="68" r="3" fill="#C8860A" opacity="0.35"/>
+          <!-- SE -->
+          <circle cx="396" cy="396" r="5" fill="#8B3A1A" opacity="0.45"/>
+          <circle cx="380" cy="412" r="3" fill="#C8860A" opacity="0.35"/>
+          <!-- Mid-ring scattered dots -->
+          <circle cx="240" cy="80" r="3" fill="#F0E6D3" opacity="0.4"/>
+          <circle cx="320" cy="120" r="2.5" fill="#C8860A" opacity="0.4"/>
+          <circle cx="360" cy="200" r="3" fill="#8B3A1A" opacity="0.35"/>
+          <circle cx="360" cy="280" r="2.5" fill="#C8860A" opacity="0.4"/>
+          <circle cx="320" cy="360" r="3" fill="#F0E6D3" opacity="0.4"/>
+          <circle cx="160" cy="360" r="2.5" fill="#8B3A1A" opacity="0.35"/>
+          <circle cx="120" cy="280" r="3" fill="#C8860A" opacity="0.4"/>
+          <circle cx="120" cy="200" r="2.5" fill="#F0E6D3" opacity="0.4"/>
+          <circle cx="160" cy="120" r="3" fill="#C8860A" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOT ART DIVIDER ===== -->
+<div class="dot-divider" aria-hidden="true"></div>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section id="why" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="why-heading">Why Choose Naarm</h2>
+      <p class="section-sub">Grounded in Country, trusted across Melbourne.</p>
+    </div>
+    <div class="why-grid">
+      <!-- Aboriginal-Owned -->
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Stylised excavator bucket icon -->
+            <path d="M2 17h5l2-5h6l2 5h5"/>
+            <path d="M7 17l-1 4h12l-1-4"/>
+            <path d="M9 12V7l3-5 3 5v5"/>
+          </svg>
+        </span>
+        <div>
+          <h3 class="why-title">Aboriginal-Owned &amp; Operated</h3>
+          <p class="why-desc">Wurundjeri Woi Wurrung, Melbourne. Indigenous enterprise with deep roots in Country.</p>
+        </div>
+      </div>
+      <!-- Full-Service -->
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <!-- Wrench + tools icon -->
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </span>
+        <div>
+          <h3 class="why-title">Full-Service Earthmoving</h3>
+          <p class="why-desc">Civil, residential, bulk and detailed works — one team for your whole project.</p>
+        </div>
+      </div>
+      <!-- Emergency -->
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </span>
+        <div>
+          <h3 class="why-title">Emergency &amp; Same-Day</h3>
+          <p class="why-desc">Fast response across Melbourne. When you need it done, we show up.</p>
+        </div>
+      </div>
+      <!-- Free Quotes -->
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <!-- Speech bubble icon -->
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </span>
+        <div>
+          <h3 class="why-title">Free Quotes</h3>
+          <p class="why-desc">No obligation, fast turnaround. Tell us about your project and we'll get back to you quick.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications" aria-labelledby="cert-heading">
+  <div class="container">
+    <h2 class="section-title" id="cert-heading">Recognised &amp; Certified</h2>
+    <p class="section-sub" style="margin: 16px auto 0;">Independent verification of our commitment to Indigenous enterprise and quality workmanship.</p>
+    <div class="cert-grid">
+
+      <!-- Supply Nation -->
+      <div class="cert-card supply-nation">
+        <div class="cert-card-icon" aria-hidden="true">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="36" stroke="#C8860A" stroke-width="2" opacity="0.4"/>
+            <circle cx="40" cy="40" r="28" stroke="#C8860A" stroke-width="2" opacity="0.55"/>
+            <circle cx="40" cy="40" r="20" stroke="#C8860A" stroke-width="2.5" opacity="0.7"/>
+            <path d="M40 20v40M20 40h40" stroke="#C8860A" stroke-width="1.5" opacity="0.35"/>
+            <path d="M26 26l28 28M54 26L26 54" stroke="#C8860A" stroke-width="1" opacity="0.2"/>
+            <!-- Shield checkmark -->
+            <path d="M40 10L20 20v13.3c0 10.4 8.5 19.6 20 22.7 11.5-3.1 20-12.3 20-22.7V20L40 10z" stroke="#C8860A" stroke-width="2" fill="rgba(200,134,10,0.08)"/>
+            <polyline points="32 38 38 44 50 32" stroke="#C8860A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="cert-card-name">Supply Nation Certified</h3>
+        <p class="cert-card-desc">Australia's leading database of verified Indigenous businesses. Supply Nation certification means you can procure with confidence.</p>
+      </div>
+
+      <!-- Kinaway -->
+      <div class="cert-card kinaway">
+        <div class="cert-card-icon" aria-hidden="true">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="36" stroke="#8B3A1A" stroke-width="2" opacity="0.4"/>
+            <circle cx="40" cy="40" r="26" stroke="#8B3A1A" stroke-width="2" opacity="0.55"/>
+            <!-- Boomerang-style motif -->
+            <path d="M22 52 C22 32 38 22 58 22" stroke="#8B3A1A" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+            <path d="M28 54 C28 38 42 28 58 28" stroke="#b04a22" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+            <!-- Dot cluster -->
+            <circle cx="32" cy="44" r="3" fill="#8B3A1A" opacity="0.7"/>
+            <circle cx="40" cy="36" r="2.5" fill="#C8860A" opacity="0.6"/>
+            <circle cx="50" cy="30" r="3" fill="#8B3A1A" opacity="0.65"/>
+            <circle cx="24" cy="52" r="2" fill="#F0E6D3" opacity="0.45"/>
+            <!-- K initial stylised -->
+            <text x="40" y="60" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#b04a22" opacity="0.6">KINAWAY</text>
+          </svg>
+        </div>
+        <h3 class="cert-card-name">Kinaway Member</h3>
+        <p class="cert-card-desc">Victorian Aboriginal Chamber of Commerce — connecting mob in business. Kinaway supports and advocates for Aboriginal and Torres Strait Islander businesses across Victoria.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOT ART DIVIDER ===== -->
+<div class="dot-divider" aria-hidden="true"></div>
+
+<!-- ===== TESTIMONIALS ===== -->
+<!-- Replace placeholder reviews with real Google Reviews -->
+<section id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="testimonials-heading">What Our Clients Say</h2>
+      <p class="section-sub">Trusted across Melbourne for quality earthworks and honest service.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <!-- 5 star SVGs -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"The Naarm team were professional from start to finish. Site was prepped perfectly ahead of schedule. Couldn't recommend them more highly — will be using them on our next project."</p>
+        <span class="testimonial-name">Sarah M. — Developer, Melbourne</span>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"Called Naarm for an urgent site issue on a Friday afternoon. They were there same day, sorted it fast, and the follow-up was great. Incredibly reliable team — genuinely proud of what they do."</p>
+        <span class="testimonial-name">Tom K. — Builder, Inner West Melbourne</span>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#C8860A" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"Exceptional work on our civil project. The team brings a real connection to what they do — the quality speaks for itself, and knowing we're supporting an Indigenous business makes choosing Naarm an easy call."</p>
+        <span class="testimonial-name">Lisa R. — Civil Project Manager</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="gallery-heading">Our Work</h2>
+      <p class="section-sub">A sample of what we've delivered across Melbourne. More photos coming soon.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-index="0" role="button" tabindex="0" aria-label="View gallery image 1">
+        <img src="/3.webp" alt="Naarm Earthmoving site work" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-index="1" role="button" tabindex="0" aria-label="View gallery image 2">
+        <img src="/4.webp" alt="Naarm Earthmoving site work" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-index="2" role="button" tabindex="0" aria-label="View gallery image 3">
+        <img src="/6.webp" alt="Naarm Earthmoving site work" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-index="3" role="button" tabindex="0" aria-label="View gallery image 4">
+        <img src="/704750143_998660629368497_6749076952601970922_n.webp" alt="Naarm Earthmoving site work" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+  <div class="lightbox-content">
+    <button class="lb-close" id="lbClose" aria-label="Close lightbox">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous image">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lightbox-placeholder" id="lbContent">
+      <!-- Placeholder content rendered by JS -->
+    </div>
+    <button class="lb-next" id="lbNext" aria-label="Next image">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" id="contact-heading">Get in Touch</h2>
+      <p class="section-sub">Ready to start your project? Call us, email us, or fill out the form below.</p>
+    </div>
+    <div class="contact-inner">
+      <!-- Left: contact details -->
+      <div class="contact-details">
+        <div class="contact-detail">
+          <span class="contact-detail-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/>
+            </svg>
+          </span>
+          <div>
+            <div class="contact-detail-label">Phone</div>
+            <div class="contact-detail-value"><a href="tel:0478096633">0478 096 633</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </span>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value"><a href="mailto:john@naarmearthmoving.com.au">john@naarmearthmoving.com.au</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </span>
+          <div>
+            <div class="contact-detail-label">Area</div>
+            <div class="contact-detail-value">Melbourne &amp; surrounds</div>
+          </div>
+        </div>
+        <div class="acknowledgement">
+          We acknowledge the Wurundjeri Woi Wurrung people as the Traditional Custodians of the land we work on. We pay our respects to Elders past and present.
+        </div>
+      </div>
+      <!-- Right: contact form -->
+      <div class="contact-form-wrap" style="background: var(--bg2); border: 1px solid var(--ochre); padding: 36px 32px;">
+        <h3 style="font-size: 1.5rem; color: var(--cream); margin-bottom: 24px;">Send a Message</h3>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="06327f5e-b734-4c48-ad27-874ce3fb8740" />
+          <input type="hidden" name="subject" value="Contact Form — Naarm Earthmoving Website" />
+          <input type="hidden" name="redirect" value="false" />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="04XX XXX XXX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Tell us about your project..." style="min-height: 120px;"></textarea>
+          </div>
+          <button type="submit" class="btn-form-submit">Send Message</button>
+          <div class="form-message" id="contactFormMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer" role="contentinfo">
+  <div class="footer-dot-strip" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="/Naarm.png" alt="NAARM Earthmoving" /></div>
+      <div class="footer-tagline">Wurundjeri Woi Wurrung — Aboriginal-owned, Melbourne</div>
+    </div>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-bottom-text">&copy; 2025 Naarm Earthmoving. All rights reserved.</p>
+    <p class="footer-bottom-text">Website by <a href="https://www.itscold.com.au" target="_blank" rel="noopener">Go Polar Creative</a></p>
+  </div>
+</footer>
+
+<script>
+  // ===== MOBILE NAV =====
+  const toggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // ===== FORM HANDLING =====
+  async function handleFormSubmit(formEl, msgEl) {
+    formEl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = formEl.querySelector('button[type=submit]');
+      const original = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const data = new FormData(formEl);
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        });
+        const json = await res.json();
+        if (json.success) {
+          msgEl.textContent = 'Thanks! We\'ll be in touch shortly.';
+          msgEl.className = 'form-message success';
+          formEl.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch {
+        msgEl.textContent = 'Something went wrong. Please call us directly on 0478 096 633.';
+        msgEl.className = 'form-message error';
+      } finally {
+        btn.textContent = original;
+        btn.disabled = false;
+      }
+    });
+  }
+  handleFormSubmit(document.getElementById('heroEnquiryForm'), document.getElementById('heroFormMsg'));
+  handleFormSubmit(document.getElementById('contactForm'), document.getElementById('contactFormMsg'));
+
+  // ===== GALLERY LIGHTBOX =====
+  const lightbox = document.getElementById('lightbox');
+  const lbContent = document.getElementById('lbContent');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  let currentIndex = 0;
+
+  const galleryImages = [
+    '/3.webp',
+    '/4.webp',
+    '/6.webp',
+    '/704750143_998660629368497_6749076952601970922_n.webp',
+  ];
+
+  function openLightbox(index) {
+    currentIndex = index;
+    renderLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    galleryItems[currentIndex].focus();
+  }
+  function renderLightbox() {
+    const src = galleryImages[currentIndex];
+    lbContent.innerHTML = `<img src="${src}" alt="Naarm Earthmoving gallery image ${currentIndex + 1}" style="width:100%;display:block;max-height:80vh;object-fit:contain;" />`;
+  }
+
+  galleryItems.forEach((item) => {
+    item.addEventListener('click', () => openLightbox(parseInt(item.dataset.index)));
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(parseInt(item.dataset.index));
+      }
+    });
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    renderLightbox();
+  });
+  lbNext.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    renderLightbox();
+  });
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length; renderLightbox(); }
+    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % galleryItems.length; renderLightbox(); }
+  });
+
+  // ===== SMOOTH SCROLL ACTIVE NAV =====
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id
+            ? 'var(--cream)' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-68px 0px 0px 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
